@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * PaginationSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-10T17:30:44.416597Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-10T17:42:42.400045Z[Etc/UTC]")
 public class PaginationSchema {
   public static final String SERIALIZED_NAME_PAGE = "page";
   @SerializedName(SERIALIZED_NAME_PAGE)
