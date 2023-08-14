@@ -36,6 +36,16 @@ public class EventsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
+    public void deleteEventsParametersDeleteTest() throws ApiException {
+        String appKey = null;
+        String response = api.deleteEventsParametersDelete(appKey);
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
     public void getEventsGetTest() throws ApiException {
         String id = null;
         EventSchema response = api.getEventsGet(id);

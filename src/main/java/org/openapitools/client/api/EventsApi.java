@@ -74,6 +74,129 @@ public class EventsApi {
     }
 
     /**
+     * Build call for deleteEventsParametersDelete
+     * @param appKey  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteEventsParametersDeleteCall(String appKey, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/events/parameters/{app_key}"
+            .replace("{" + "app_key" + "}", localVarApiClient.escapeString(appKey.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "auth_token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteEventsParametersDeleteValidateBeforeCall(String appKey, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'appKey' is set
+        if (appKey == null) {
+            throw new ApiException("Missing the required parameter 'appKey' when calling deleteEventsParametersDelete(Async)");
+        }
+
+        return deleteEventsParametersDeleteCall(appKey, _callback);
+
+    }
+
+    /**
+     * 
+     * 
+     * @param appKey  (required)
+     * @return String
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public String deleteEventsParametersDelete(String appKey) throws ApiException {
+        ApiResponse<String> localVarResp = deleteEventsParametersDeleteWithHttpInfo(appKey);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param appKey  (required)
+     * @return ApiResponse&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<String> deleteEventsParametersDeleteWithHttpInfo(String appKey) throws ApiException {
+        okhttp3.Call localVarCall = deleteEventsParametersDeleteValidateBeforeCall(appKey, null);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param appKey  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteEventsParametersDeleteAsync(String appKey, final ApiCallback<String> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteEventsParametersDeleteValidateBeforeCall(appKey, _callback);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getEventsGet
      * @param id  (required)
      * @param _callback Callback for upload/download progress
