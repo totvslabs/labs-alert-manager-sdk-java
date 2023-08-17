@@ -22,6 +22,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,11 +54,11 @@ import org.openapitools.client.JSON;
 /**
  * PolicySchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-14T14:26:48.852418Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T20:04:14.933358Z[Etc/UTC]")
 public class PolicySchema {
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  private Object channels;
+  private List<String> channels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CLIENT_SOURCE = "client_source";
   @SerializedName(SERIALIZED_NAME_CLIENT_SOURCE)
@@ -120,9 +123,17 @@ public class PolicySchema {
   public PolicySchema() {
   }
 
-  public PolicySchema channels(Object channels) {
+  public PolicySchema channels(List<String> channels) {
     
     this.channels = channels;
+    return this;
+  }
+
+  public PolicySchema addChannelsItem(String channelsItem) {
+    if (this.channels == null) {
+      this.channels = new ArrayList<>();
+    }
+    this.channels.add(channelsItem);
     return this;
   }
 
@@ -131,12 +142,12 @@ public class PolicySchema {
    * @return channels
   **/
   @javax.annotation.Nonnull
-  public Object getChannels() {
+  public List<String> getChannels() {
     return channels;
   }
 
 
-  public void setChannels(Object channels) {
+  public void setChannels(List<String> channels) {
     this.channels = channels;
   }
 
@@ -594,6 +605,12 @@ public class PolicySchema {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the required json array is present
+      if (jsonObj.get("channels") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("channels").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
+      }
       if (!jsonObj.get("client_source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `client_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client_source").toString()));
       }

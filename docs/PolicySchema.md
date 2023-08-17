@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**channels** | **Object** | List of channel notification |  |
+|**channels** | **List&lt;String&gt;** | List of channel notification |  |
 |**clientSource** | **String** | Policy Client source |  |
 |**clientUuid** | **String** | Policy Client UUID |  |
 |**createdAt** | **OffsetDateTime** |  |  [optional] |

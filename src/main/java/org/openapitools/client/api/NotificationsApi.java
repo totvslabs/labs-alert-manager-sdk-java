@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.NotificationSchema;
 import org.openapitools.client.model.PaginationSchema;
-import org.openapitools.client.model.PolicyChannelSchema;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -145,7 +145,7 @@ public class NotificationsApi {
      * 
      * 
      * @param id  (required)
-     * @return PolicyChannelSchema
+     * @return NotificationSchema
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -153,8 +153,8 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
      </table>
      */
-    public PolicyChannelSchema getNotificationLogGet(String id) throws ApiException {
-        ApiResponse<PolicyChannelSchema> localVarResp = getNotificationLogGetWithHttpInfo(id);
+    public NotificationSchema getNotificationLogGet(String id) throws ApiException {
+        ApiResponse<NotificationSchema> localVarResp = getNotificationLogGetWithHttpInfo(id);
         return localVarResp.getData();
     }
 
@@ -162,7 +162,7 @@ public class NotificationsApi {
      * 
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;PolicyChannelSchema&gt;
+     * @return ApiResponse&lt;NotificationSchema&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -170,9 +170,9 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PolicyChannelSchema> getNotificationLogGetWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<NotificationSchema> getNotificationLogGetWithHttpInfo(String id) throws ApiException {
         okhttp3.Call localVarCall = getNotificationLogGetValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<PolicyChannelSchema>(){}.getType();
+        Type localVarReturnType = new TypeToken<NotificationSchema>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -189,10 +189,10 @@ public class NotificationsApi {
         <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNotificationLogGetAsync(String id, final ApiCallback<PolicyChannelSchema> _callback) throws ApiException {
+    public okhttp3.Call getNotificationLogGetAsync(String id, final ApiCallback<NotificationSchema> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNotificationLogGetValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<PolicyChannelSchema>(){}.getType();
+        Type localVarReturnType = new TypeToken<NotificationSchema>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -306,6 +306,129 @@ public class NotificationsApi {
 
         okhttp3.Call localVarCall = getNotificationLogGetAllValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<PaginationSchema>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for postNotificationLogResend
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postNotificationLogResendCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/notifications/{id}/resend"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "auth_token" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call postNotificationLogResendValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling postNotificationLogResend(Async)");
+        }
+
+        return postNotificationLogResendCall(id, _callback);
+
+    }
+
+    /**
+     * 
+     * 
+     * @param id  (required)
+     * @return NotificationSchema
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public NotificationSchema postNotificationLogResend(String id) throws ApiException {
+        ApiResponse<NotificationSchema> localVarResp = postNotificationLogResendWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 
+     * 
+     * @param id  (required)
+     * @return ApiResponse&lt;NotificationSchema&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<NotificationSchema> postNotificationLogResendWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = postNotificationLogResendValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<NotificationSchema>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * 
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call postNotificationLogResendAsync(String id, final ApiCallback<NotificationSchema> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = postNotificationLogResendValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<NotificationSchema>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

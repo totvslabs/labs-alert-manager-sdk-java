@@ -14,8 +14,8 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
+import org.openapitools.client.model.NotificationSchema;
 import org.openapitools.client.model.PaginationSchema;
-import org.openapitools.client.model.PolicyChannelSchema;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +38,7 @@ public class NotificationsApiTest {
     @Test
     public void getNotificationLogGetTest() throws ApiException {
         String id = null;
-        PolicyChannelSchema response = api.getNotificationLogGet(id);
+        NotificationSchema response = api.getNotificationLogGet(id);
         // TODO: test validations
     }
 
@@ -48,6 +48,16 @@ public class NotificationsApiTest {
     @Test
     public void getNotificationLogGetAllTest() throws ApiException {
         PaginationSchema response = api.getNotificationLogGetAll();
+        // TODO: test validations
+    }
+
+    /**
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void postNotificationLogResendTest() throws ApiException {
+        String id = null;
+        NotificationSchema response = api.postNotificationLogResend(id);
         // TODO: test validations
     }
 
