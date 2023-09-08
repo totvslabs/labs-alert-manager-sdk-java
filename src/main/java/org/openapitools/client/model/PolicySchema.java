@@ -45,7 +45,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -53,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * PolicySchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-29T11:51:30.215614Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-08T20:03:43.869553Z[Etc/UTC]")
 public class PolicySchema {
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
@@ -99,21 +98,9 @@ public class PolicySchema {
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
-  public static final String SERIALIZED_NAME_LABELS = "labels";
-  @SerializedName(SERIALIZED_NAME_LABELS)
-  private Object labels;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_SEVERITY = "severity";
-  @SerializedName(SERIALIZED_NAME_SEVERITY)
-  private String severity;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -361,27 +348,6 @@ public class PolicySchema {
   }
 
 
-  public PolicySchema labels(Object labels) {
-    
-    this.labels = labels;
-    return this;
-  }
-
-   /**
-   * Policy labels
-   * @return labels
-  **/
-  @javax.annotation.Nonnull
-  public Object getLabels() {
-    return labels;
-  }
-
-
-  public void setLabels(Object labels) {
-    this.labels = labels;
-  }
-
-
   public PolicySchema name(String name) {
     
     this.name = name;
@@ -400,48 +366,6 @@ public class PolicySchema {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-
-  public PolicySchema severity(String severity) {
-    
-    this.severity = severity;
-    return this;
-  }
-
-   /**
-   * Policy severity
-   * @return severity
-  **/
-  @javax.annotation.Nonnull
-  public String getSeverity() {
-    return severity;
-  }
-
-
-  public void setSeverity(String severity) {
-    this.severity = severity;
-  }
-
-
-  public PolicySchema type(String type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Policy type
-   * @return type
-  **/
-  @javax.annotation.Nonnull
-  public String getType() {
-    return type;
-  }
-
-
-  public void setType(String type) {
-    this.type = type;
   }
 
 
@@ -487,16 +411,13 @@ public class PolicySchema {
         Objects.equals(this.frequencyMinutes, policySchema.frequencyMinutes) &&
         Objects.equals(this.frequencyOccurrences, policySchema.frequencyOccurrences) &&
         Objects.equals(this.id, policySchema.id) &&
-        Objects.equals(this.labels, policySchema.labels) &&
         Objects.equals(this.name, policySchema.name) &&
-        Objects.equals(this.severity, policySchema.severity) &&
-        Objects.equals(this.type, policySchema.type) &&
         Objects.equals(this.updatedAt, policySchema.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channels, clientSource, clientUuid, createdAt, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, labels, name, severity, type, updatedAt);
+    return Objects.hash(channels, clientSource, clientUuid, createdAt, deleted, enabled, filters, frequency, frequencyMinutes, frequencyOccurrences, id, name, updatedAt);
   }
 
   @Override
@@ -514,10 +435,7 @@ public class PolicySchema {
     sb.append("    frequencyMinutes: ").append(toIndentedString(frequencyMinutes)).append("\n");
     sb.append("    frequencyOccurrences: ").append(toIndentedString(frequencyOccurrences)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -552,10 +470,7 @@ public class PolicySchema {
     openapiFields.add("frequency_minutes");
     openapiFields.add("frequency_occurrences");
     openapiFields.add("id");
-    openapiFields.add("labels");
     openapiFields.add("name");
-    openapiFields.add("severity");
-    openapiFields.add("type");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
@@ -570,10 +485,7 @@ public class PolicySchema {
     openapiRequiredFields.add("frequency_minutes");
     openapiRequiredFields.add("frequency_occurrences");
     openapiRequiredFields.add("id");
-    openapiRequiredFields.add("labels");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("severity");
-    openapiRequiredFields.add("type");
   }
 
  /**
@@ -589,9 +501,9 @@ public class PolicySchema {
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PolicySchema.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PolicySchema` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
@@ -621,12 +533,6 @@ public class PolicySchema {
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if (!jsonObj.get("severity").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `severity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity").toString()));
-      }
-      if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

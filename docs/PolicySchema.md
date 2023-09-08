@@ -18,10 +18,7 @@
 |**frequencyMinutes** | **Integer** | Quantity of alert interval time |  |
 |**frequencyOccurrences** | **Integer** | Quantity of alert occurrencies |  |
 |**id** | **String** | Id |  |
-|**labels** | **Object** | Policy labels |  |
 |**name** | **String** | Policy name |  |
-|**severity** | **String** | Policy severity |  |
-|**type** | **String** | Policy type |  |
 |**updatedAt** | **OffsetDateTime** |  |  [optional] |
 
 

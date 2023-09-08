@@ -129,35 +129,11 @@ public class PolicySchemaTest {
     }
 
     /**
-     * Test the property 'labels'
-     */
-    @Test
-    public void labelsTest() {
-        // TODO: test labels
-    }
-
-    /**
      * Test the property 'name'
      */
     @Test
     public void nameTest() {
         // TODO: test name
-    }
-
-    /**
-     * Test the property 'severity'
-     */
-    @Test
-    public void severityTest() {
-        // TODO: test severity
-    }
-
-    /**
-     * Test the property 'type'
-     */
-    @Test
-    public void typeTest() {
-        // TODO: test type
     }
 
     /**

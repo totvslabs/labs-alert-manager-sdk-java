@@ -44,7 +44,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.openapitools.client.JSON;
@@ -52,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * PolicyChannelSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-29T11:51:30.215614Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-08T20:03:43.869553Z[Etc/UTC]")
 public class PolicyChannelSchema {
   public static final String SERIALIZED_NAME_CLIENT_UUID = "client_uuid";
   @SerializedName(SERIALIZED_NAME_CLIENT_UUID)
@@ -416,9 +415,9 @@ public class PolicyChannelSchema {
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PolicyChannelSchema.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PolicyChannelSchema` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
