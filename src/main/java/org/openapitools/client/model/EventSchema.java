@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * EventSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T19:03:10.955152Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-26T17:31:53.141323Z[Etc/UTC]")
 public class EventSchema {
   public static final String SERIALIZED_NAME_CLIENT_SOURCE = "client_source";
   @SerializedName(SERIALIZED_NAME_CLIENT_SOURCE)

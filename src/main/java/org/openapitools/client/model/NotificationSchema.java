@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * NotificationSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T19:03:10.955152Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-26T17:31:53.141323Z[Etc/UTC]")
 public class NotificationSchema {
   public static final String SERIALIZED_NAME_CLIENT_UUID = "client_uuid";
   @SerializedName(SERIALIZED_NAME_CLIENT_UUID)
