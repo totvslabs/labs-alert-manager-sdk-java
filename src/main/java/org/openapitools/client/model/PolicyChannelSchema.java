@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * PolicyChannelSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-26T17:31:53.141323Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-06T15:51:09.937846Z[Etc/UTC]")
 public class PolicyChannelSchema {
   public static final String SERIALIZED_NAME_CLIENT_UUID = "client_uuid";
   @SerializedName(SERIALIZED_NAME_CLIENT_UUID)
